@@ -1,0 +1,12 @@
+.photo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-style: dotted;
+    background: url("img/Blue.jpg") no-repeat center;
+}
+
+
+h1 {
+    color: blue;
+}
