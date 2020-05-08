@@ -46,6 +46,7 @@ public class Article {
     }
     
     public void setPrice(double price) {
+    	if(price < 0 ) throw new RuntimeException("Bad price: must be positive");
         this.price = price;
     }
     
