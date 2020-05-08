@@ -1,12 +1,20 @@
 
 package fr.koor.webstore.business;
 
-public class Article {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity @Table(name="T_Articles")
+public class Article {
+    
+	@Id @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int idArticle;
     private String description;
     private String brand;
-    private double price;
+    private double UnitaryPrice;
     
     
     public Article() {
@@ -42,18 +50,18 @@ public class Article {
     }
     
     public double getPrice() {
-        return price;
+        return UnitaryPrice;
     }
     
     public void setPrice(double price) {
     	if(price < 0 ) throw new RuntimeException("Bad price: must be positive");
-        this.price = price;
+        this.UnitaryPrice = price;
     }
     
     @Override
     public String toString() {
         return "Article [idArticle=" + idArticle + ", description=" + description +
-               ", brand=" + brand + ", price=" + price + "]";
+               ", brand=" + brand + ", price=" + UnitaryPrice + "]";
     }
     
 }
