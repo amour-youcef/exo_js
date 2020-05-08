@@ -15,9 +15,12 @@ public class ConsoleJPA {
         EntityManagerFactory entityManagerFactory = null;
         EntityManager entityManager = null;
         try {
-            entityManagerFactory = Persistence.createEntityManagerFactory("WebStore");
+            entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
             entityManager = entityManagerFactory.createEntityManager();
-        
+            
+           Article art =  entityManager.find(Article.class, 1);
+            System.out.println(art); 
+          
 //            System.out.println( "- Lecture de tous les articles -----------" );
 //            
 //            List<Article> articles = entityManager.createQuery( "from Article", Article.class )
