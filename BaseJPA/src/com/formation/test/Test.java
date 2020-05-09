@@ -7,23 +7,14 @@ import javax.persistence.Persistence;
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BasePu");
-		
+	
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BasePU");
 		EntityManager em = emf.createEntityManager();
-		
 		EntityTransaction tx = em.getTransaction();
 		
-		//Creation des instances 
 		
-		tx.commit();
-		
-		em.close();
-		
-		emf.close();
-		
-		
-		System.out.println("OK .....§");
+		System.out.println("OK   §");
 	}
 }
