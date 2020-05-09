@@ -16,13 +16,24 @@ public class Test {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
+		 // creation des instances
+	
+		
 		Contact contact = new Contact();
 		contact.setNom("JAVA");
 		contact.setPrenom("Formation");
 		contact.setEmail("amour-youcef@hotmail.com");
 		
+		
+		tx.begin();
+		
 		//integration avec jpa-hibernate
 		em.persist(contact);
+		
+		tx.commit();
+		em.close();
+		emf.close();
+		
 		
 		System.out.println("OK   §");
 	}

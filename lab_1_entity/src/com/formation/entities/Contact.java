@@ -3,6 +3,7 @@ package com.formation.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -10,13 +11,14 @@ public class Contact {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="CONTACT_ID")
+	@Column (name="CONTACT_ID")
+	
 	private int id;
 	private String nom;
 	private String prenom;
 	private String email;
 
-	public Contact(int id, String nom, String prenom, String email) {
+	public Contact(String nom, String prenom, String email) {
 		super();
 		this.id = id;
 		this.nom = nom;

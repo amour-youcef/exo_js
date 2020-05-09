@@ -14,6 +14,15 @@ public class Test {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
+		 //creation des instances
+		tx.begin();
+		
+		// intéraction avec jpa-hibernat
+		
+		tx.commit();
+		em.close();
+		emf.close();
+		
 		
 		System.out.println("OK   §");
 	}
