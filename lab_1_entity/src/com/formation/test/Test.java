@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import com.formation.entities.Contact;
 import com.objis.demojpa.domaine.Formation;
 
 public class Test {
@@ -21,16 +22,23 @@ public class Test {
 		tx.begin();
 
 		// 3 : Instanciation Objet métier
+		
 //		Formation formation = new Formation("Hibernate");
 
+		Contact contact = new Contact();
+		contact.setNom("JAVA");
+		contact.setPrenom("Formation");
+		contact.setEmail("amour-youcef@hotmail.com");
+		
 		// 4 : Persistance Objet/Relationnel : création d'un enregistrement en base
-//		em.persist(formation);
+		em.persist(contact);
 
 		// 5 : Fermeture transaction
 		tx.commit();
 
 		// 6 : Fermeture unité de travail JPA
 		em.close();
+		
 		emf.close();
 		
 		
