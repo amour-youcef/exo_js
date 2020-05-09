@@ -10,14 +10,23 @@
         
         <properties>
              <property name="hibernate.archive.autodetection" value="class"/>
+             <!-- <property name="hibernate.show_sql" value="true"/> -->
              <property name="hibernate.format_sql" value="true"/>
              
+            <!--  Configuration de la BDD -->
+            
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/jpa" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="" />
             
+            <!-- specifie le dialecte sql utilisé pour communiquer avec la BDD -->
+            
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            
+            <!-- indique a hibernate de (re) cree la BDD au communiquer de l'application -->
+            
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
         </properties>
     </persistence-unit>
     
