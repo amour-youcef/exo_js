@@ -31,6 +31,15 @@ public class Address implements java.io.Serializable {
 		this.state = state;
 		this.zipcode = zipcode;
 	}
+	
+
+	public Address(String street, String city, String state, String zipcode) {
+		super();
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.zipcode = zipcode;
+	}
 
 	public long getAddressId() {
 		return addressId;
