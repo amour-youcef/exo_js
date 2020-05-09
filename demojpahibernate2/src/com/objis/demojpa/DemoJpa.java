@@ -1,5 +1,7 @@
 package com.objis.demojpa;
 
+
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -20,7 +22,7 @@ public class DemoJpa {
 		tx.begin();
 		
 		// 3 : Instanciation Objet métier
-		Formation formation = new Formation("JPA");
+		Formation formation = new Formation("Hibernate");
 		
 		// 4 : Persistance Objet/Relationnel : création d'un enregistrement en base
 		 em.persist(formation);
