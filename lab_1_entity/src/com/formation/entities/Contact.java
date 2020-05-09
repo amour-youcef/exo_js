@@ -1,7 +1,16 @@
 package com.formation.entities;
 
-public class Contact {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class Contact {
+	
+	@Id
+	@GeneratedValue
+	@Column(name="CONTACT_ID")
 	private int id;
 	private String nom;
 	private String prenom;
