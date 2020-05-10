@@ -1,10 +1,13 @@
 package com.formation.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Student implements java.io.Serializable {
@@ -16,35 +19,31 @@ public class Student implements java.io.Serializable {
 	private long studentId;
 	private String studentName;
 
-	@OneToOne
-	@JoinColumn(name = "ADR_ID")
-	private Address studentAddress;
+	@OneToMany
+	@JoinTable(name = "STUD_PHONE", joinColumns = @JoinColumn(name = "STUD_ID"), inverseJoinColumns = @JoinColumn(name = "PHONE_ID"))
+
+	private List<Phone> studentPhoneNumbers;
 
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(long studentId, String studentName, Address studentAddress) {
+	public Student(String studentName, List<Phone> studentPhoneNumbers) {
+		super();
+		this.studentName = studentName;
+		this.studentPhoneNumbers = studentPhoneNumbers;
+	}
+
+	public Student(long studentId, String studentName, List<Phone> studentPhoneNumbers) {
 		super();
 		this.studentId = studentId;
 		this.studentName = studentName;
-		this.studentAddress = studentAddress;
-	}
-
-	@Override
-	public String toString() {
-		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", studentAddress=" + studentAddress
-				+ "]";
+		this.studentPhoneNumbers = studentPhoneNumbers;
 	}
 
 	public long getStudentId() {
 		return studentId;
-	}
-
-	public Student(String studentName) {
-		super();
-		this.studentName = studentName;
 	}
 
 	public void setStudentId(long studentId) {
@@ -59,16 +58,22 @@ public class Student implements java.io.Serializable {
 		this.studentName = studentName;
 	}
 
-	public Address getStudentAddress() {
-		return studentAddress;
+	public List<Phone> getStudentPhoneNumbers() {
+		return studentPhoneNumbers;
 	}
 
-	public void setStudentAddress(Address studentAddress) {
-		this.studentAddress = studentAddress;
+	public void setStudentPhoneNumbers(List<Phone> studentPhoneNumbers) {
+		this.studentPhoneNumbers = studentPhoneNumbers;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", studentPhoneNumbers="
+				+ studentPhoneNumbers + "]";
 	}
 
 }
