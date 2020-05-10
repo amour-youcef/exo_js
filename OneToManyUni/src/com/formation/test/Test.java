@@ -38,11 +38,14 @@ public class Test {
 		phoneNumbers.add(phone1);
 		phoneNumbers.add(phone2);
 		
-		studen
+		student.setStudentPhoneNumbers(phoneNumbers);
 		
 		// 4 : Persistance Objet/Relationnel : création d'un enregistrement en base
-		em.persist(student1);
-		em.persist(address1);
+		
+		em.persist(student);
+		em.persist(phone1);
+		em.persist(phone2);
+		
 		// 5 : Fermeture transaction
 		tx.commit();
 
