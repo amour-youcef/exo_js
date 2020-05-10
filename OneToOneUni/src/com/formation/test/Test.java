@@ -7,6 +7,7 @@ import javax.persistence.Persistence;
 
 import com.formation.entities.Address;
 import com.formation.entities.Contact;
+import com.formation.entities.Student;
 import com.objis.demojpa.domaine.Formation;
 
 public class Test {
@@ -25,17 +26,13 @@ public class Test {
 		// 3 : Instanciation Objet métier
 //		Formation formation = new Formation("Hibernate");
 
-		Contact contact = new Contact();
-		Contact contact1 = new Contact("test","test","test");
-		
 		Address address1 = new Address("OMR Road","Chennai","TN","600097");
-		contact.setNom("JAVA");
-		contact.setPrenom("Formation");
-		contact.setEmail("amour-youcef@hotmail.com");
+		Student student1 = new Student("Eswar");
+		student1.setStudentAddress(address1);
 		
 		// 4 : Persistance Objet/Relationnel : création d'un enregistrement en base
-		em.persist(contact);
-		em.persist(contact1);
+		em.persist(student1);
+		em.persist(address1);
 		// 5 : Fermeture transaction
 		tx.commit();
 
@@ -45,6 +42,6 @@ public class Test {
 		emf.close();
 		
 		
-		System.out.println("ok");
+		System.out.println("ok.....!");
 	}
 }
