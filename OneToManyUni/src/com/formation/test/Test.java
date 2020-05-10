@@ -26,7 +26,7 @@ public class Test {
 		// 3 : Instanciation Objet métier
 //		Formation formation = new Formation("Hibernate");
 
-		Address address1 = new Address("OMR Road","Chennai","TN","600097");
+		Address address1 = new Address("OMR Road","Chennai","Test","600097");
 		Student student1 = new Student("Eswar");
 		student1.setStudentAddress(address1);
 		
