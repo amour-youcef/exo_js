@@ -42,6 +42,11 @@ public class Student implements java.io.Serializable {
 		this.studentPhoneNumbers = studentPhoneNumbers;
 	}
 
+	public Student(String studentName) {
+		super();
+		this.studentName = studentName;
+	}
+
 	public long getStudentId() {
 		return studentId;
 	}

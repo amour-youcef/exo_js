@@ -30,10 +30,15 @@ public class Test {
 		// 3 : Instanciation Objet métier
         
 		List<Phone> phoneNumbers = new ArrayList<Phone>();
+		
+		Student student = new Student("Eswar");
 		Phone phone1 = new Phone("house", "0686062352");
 		Phone phone2 = new Phone("mobile", "987654321");
 		
+		phoneNumbers.add(phone1);
+		phoneNumbers.add(phone2);
 		
+		studen
 		
 		// 4 : Persistance Objet/Relationnel : création d'un enregistrement en base
 		em.persist(student1);
