@@ -1,5 +1,8 @@
 package com.formation.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -7,6 +10,7 @@ import javax.persistence.Persistence;
 
 import com.formation.entities.Address;
 import com.formation.entities.Contact;
+import com.formation.entities.Phone;
 import com.formation.entities.Student;
 
 
@@ -24,11 +28,12 @@ public class Test {
 		tx.begin();
 
 		// 3 : Instanciation Objet métier
-//		Formation formation = new Formation("Hibernate");
-
-		Address address1 = new Address("OMR Road","Chennai","Testttttt","600097");
-		Student student1 = new Student("Eswar");
-		student1.setStudentAddress(address1);
+        
+		List<Phone> phoneNumbers = new ArrayList<Phone>();
+		Phone phone1 = new Phone("house", "0686062352");
+		Phone phone2 = new Phone("mobile", "987654321");
+		
+		
 		
 		// 4 : Persistance Objet/Relationnel : création d'un enregistrement en base
 		em.persist(student1);
