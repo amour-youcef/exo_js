@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 import com.formation.entities.Address;
 import com.formation.entities.Contact;
 import com.formation.entities.Student;
-import com.objis.demojpa.domaine.Formation;
+
 
 public class Test {
 
@@ -26,7 +26,7 @@ public class Test {
 		// 3 : Instanciation Objet métier
 //		Formation formation = new Formation("Hibernate");
 
-		Address address1 = new Address("OMR Road","Chennai","Test","600097");
+		Address address1 = new Address("OMR Road","Chennai","Testttttt","600097");
 		Student student1 = new Student("Eswar");
 		student1.setStudentAddress(address1);
 		
