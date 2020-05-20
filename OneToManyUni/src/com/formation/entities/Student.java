@@ -3,6 +3,7 @@ package com.formation.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -19,9 +20,9 @@ public class Student implements java.io.Serializable {
 	private long studentId;
 	private String studentName;
 
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "STUD_PHONE", joinColumns = @JoinColumn(name = "STUD_ID"), inverseJoinColumns = @JoinColumn(name = "PHONE_ID"))
-
+//	@JoinColumn(name = "STUD_ID",referencedColumnName="studentId")
 	private List<Phone> studentPhoneNumbers;
 
 	public Student() {
