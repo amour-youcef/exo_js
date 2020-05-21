@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import fr.koor.webstore.buisiness.Article;
@@ -20,15 +21,20 @@ public class Console {
 			entityManagerFactory = Persistence.createEntityManagerFactory("WebStore");
 			entityManager = entityManagerFactory.createEntityManager();
 
-//			Article art = entityManager.find(Article.class, 5);
-//			System.out.println(art);
+			Article art = entityManager.find(Article.class, 5);
+			System.out.println(art);
+			
+			EntityTransaction trans = entityManager.getTransaction();
+			trans.begin();
+			trans.commit();
 
-			System.out.println("- Lecture de tous les articles -----------");
-
-			List<Article> articles = entityManager.createQuery("from Article", Article.class).getResultList();
-			for (Article article : articles) {
-				System.out.println(article);
-			}
+			/*
+			 * System.out.println("- Lecture de tous les articles -----------");
+			 * 
+			 * List<Article> articles = entityManager.createQuery("from Article",
+			 * Article.class).getResultList(); for (Article article : articles) {
+			 * System.out.println(article); }
+			 */
 
 		} finally {
 			if (entityManager != null)
