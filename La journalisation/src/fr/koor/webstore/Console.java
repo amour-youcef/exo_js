@@ -21,38 +21,22 @@ public class Console {
 			entityManagerFactory = Persistence.createEntityManagerFactory("WebStore");
 			entityManager = entityManagerFactory.createEntityManager();
 
-			/*
-			 * Article art = entityManager.find(Article.class, 5); System.out.println(art);
-			 */
+//		    System.out.println("-------------------------------------");
+//		    
+//		    Article art = entityManager.find(Article.class, 5);
+//		    System.out.println(art);
 			
+			EntityTransaction trans = entityManager.getTransaction();
+			trans.begin();
 			
-			/*
-			 * Article art = entityManager.find(Article.class, 11); System.out.println(art);
-			 * 
-			 * EntityTransaction trans = entityManager.getTransaction(); trans.begin();
-			 * 
-			 * entityManager.remove(art);
-			 */
+			Article art = new Article ("test","test",100);
+			entityManager.persist(art);
 			
-			/* trans.commit(); */
-			/*
-			 * Article newArt = new Article("Truc","Bidon",100);
-			 * entityManager.persist(newArt);
-			 */
+			art.setPrice(9);
 			
-			/*
-			 * art.setPrice(9); entityManager.persist(art);
-			 * 
-			 * trans.commit();
-			 */
-
-			/*
-			 * System.out.println("- Lecture de tous les articles -----------");
-			 * 
-			 * List<Article> articles = entityManager.createQuery("from Article",
-			 * Article.class).getResultList(); for (Article article : articles) {
-			 * System.out.println(article); }
-			 */
+			entityManager.remove(art);
+			
+			trans.commit();
 
 		} finally {
 			if (entityManager != null)

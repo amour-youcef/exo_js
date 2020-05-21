@@ -8,7 +8,6 @@ import javax.persistence.Persistence;
 import com.formation.entities.Address;
 import com.formation.entities.Contact;
 import com.formation.entities.Student;
-import com.objis.demojpa.domaine.Formation;
 
 public class Test {
 
@@ -26,8 +25,8 @@ public class Test {
 		// 3 : Instanciation Objet métier
 //		Formation formation = new Formation("Hibernate");
 
-		Address address1 = new Address("OMR Road","Chennai","TN","600097");
-		Student student1 = new Student("Eswar");
+		Address address1 = new Address("amour youcef","belfort","dp","90000");
+		Student student1 = new Student("dit");
 		student1.setStudentAddress(address1);
 		
 		// 4 : Persistance Objet/Relationnel : création d'un enregistrement en base
