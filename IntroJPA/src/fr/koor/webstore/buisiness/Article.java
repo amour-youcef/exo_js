@@ -1,5 +1,9 @@
 package fr.koor.webstore.buisiness;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity @Table(name="t_Articles")
 public class Article {
 
 	private int idArticle;
