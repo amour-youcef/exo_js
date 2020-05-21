@@ -21,12 +21,20 @@ public class Console {
 			entityManagerFactory = Persistence.createEntityManagerFactory("WebStore");
 			entityManager = entityManagerFactory.createEntityManager();
 
-			Article art = entityManager.find(Article.class, 5);
-			System.out.println(art);
+			/*
+			 * Article art = entityManager.find(Article.class, 5); System.out.println(art);
+			 */
 			
 			EntityTransaction trans = entityManager.getTransaction();
 			trans.begin();
-			trans.commit();
+			
+			Article newArt = new Article("Truc","Bidon",100);
+			
+			/*
+			 * art.setPrice(9); entityManager.persist(art);
+			 * 
+			 * trans.commit();
+			 */
 
 			/*
 			 * System.out.println("- Lecture de tous les articles -----------");
