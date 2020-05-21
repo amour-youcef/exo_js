@@ -1,4 +1,4 @@
-package fr.koor.webstore.buisiness;
+package fr.koor.webstore.business;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

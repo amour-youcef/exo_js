@@ -8,7 +8,7 @@
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
-		<class>fr.koor.webstore.buisiness.Articla</class>
+		<class>fr.koor.webstore.business.Article</class>
 		<class>fr.koor.webstore.business.User</class>
 		<class>fr.koor.webstore.business.UserInformations</class>
 		

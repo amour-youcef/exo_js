@@ -1,13 +1,10 @@
 package fr.koor.webstore;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-
-import fr.koor.webstore.buisiness.Article;
+import fr.koor.webstore.business.User;
+import fr.koor.webstore.business.UserInformations;
 
 public class Console {
 
@@ -21,22 +18,14 @@ public class Console {
 			entityManagerFactory = Persistence.createEntityManagerFactory("WebStore");
 			entityManager = entityManagerFactory.createEntityManager();
 
-//		    System.out.println("-------------------------------------");
-//		    
-//		    Article art = entityManager.find(Article.class, 5);
-//		    System.out.println(art);
-			
-			EntityTransaction trans = entityManager.getTransaction();
-			trans.begin();
-			
-			Article art = new Article ("test","test",100);
-			entityManager.persist(art);
-			
-			art.setPrice(9);
-			
-			entityManager.remove(art);
-			
-			trans.commit();
+		    System.out.println("-------------------------------------");
+		    User user = entityManager.find( User.class, 1 );
+            System.out.println( user );
+            UserInformations informations = user.getUserInformations();
+            System.out.println( informations );
+            
+            
+            System.out.println("ok");
 
 		} finally {
 			if (entityManager != null)
