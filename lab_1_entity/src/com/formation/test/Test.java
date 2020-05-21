@@ -4,9 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-
 import com.formation.entities.Contact;
-import com.objis.demojpa.domaine.Formation;
+
 
 public class Test {
 
@@ -26,8 +25,8 @@ public class Test {
 //		Formation formation = new Formation("Hibernate");
 
 		Contact contact = new Contact();
-		contact.setNom("JAVA");
-		contact.setPrenom("Formation");
+		contact.setNom("php");
+		contact.setPrenom("OnlineFormaPro");
 		contact.setEmail("amour-youcef@hotmail.com");
 		
 		// 4 : Persistance Objet/Relationnel : création d'un enregistrement en base

@@ -25,10 +25,20 @@ public class Console {
 			 * Article art = entityManager.find(Article.class, 5); System.out.println(art);
 			 */
 			
-			EntityTransaction trans = entityManager.getTransaction();
-			trans.begin();
 			
-			Article newArt = new Article("Truc","Bidon",100);
+			/*
+			 * Article art = entityManager.find(Article.class, 11); System.out.println(art);
+			 * 
+			 * EntityTransaction trans = entityManager.getTransaction(); trans.begin();
+			 * 
+			 * entityManager.remove(art);
+			 */
+			
+			/* trans.commit(); */
+			/*
+			 * Article newArt = new Article("Truc","Bidon",100);
+			 * entityManager.persist(newArt);
+			 */
 			
 			/*
 			 * art.setPrice(9); entityManager.persist(art);
